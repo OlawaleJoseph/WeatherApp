@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/OlawaleJoseph/WeatherApp/issues"
   },
-  "homepage": "https://github.com/OlawaleJoseph/WeatherApp#readme"
+  "homepage": "https://github.com/OlawaleJoseph/WeatherApp#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "css-loader": "^4.3.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  }
 }
