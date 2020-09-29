@@ -1,4 +1,5 @@
 import { getWeatherByCityName } from '../utils/fetch';
+import renderWidget from '../utils/common';
 
 export default () => {
   const form = document.createElement('form');
@@ -15,10 +16,13 @@ export default () => {
   form.appendChild(input);
   form.appendChild(btn);
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    getWeatherByCityName(input.value);
+    const {
+      name, weather, sys, main,
+    } = await getWeatherByCityName(input.value);
     form.reset();
+    renderWidget(name, weather, sys, main);
   });
 
   document.querySelector('#content').appendChild(form);
