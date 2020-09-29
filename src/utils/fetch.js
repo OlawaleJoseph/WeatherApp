@@ -22,3 +22,8 @@ export const getWeatherByCityName = async (cityName) => {
     return error;
   }
 };
+
+export const getIconUrl = async (iconCode) => {
+  const { url } = await fetch(`http://openweathermap.org/img/w/${iconCode}.png`);
+  return url;
+};
