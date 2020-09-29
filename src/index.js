@@ -1,18 +1,21 @@
 import './app.css';
-import { getWeatherByCityName, getWeatherByCords, getIconUrl } from './utils/fetch';
-import Form from './components/Searchfrom';
+import { getWeatherByCityName, getWeatherByCords } from './utils/fetch';
+import renderForm from './components/SearchForm';
+import renderWeather from './utils/common';
 
 const successfulLookup = async (position) => {
   const { latitude, longitude } = position.coords;
-  const { name, weather } = await getWeatherByCords(latitude, longitude);
-  await getIconUrl(weather[0].icon);
-  console.log('Accept', name, weather);
+  const {
+    name, weather, sys, main,
+  } = await getWeatherByCords(latitude, longitude);
+  await renderWeather(name, weather, sys, main);
 };
 
 const unsuccessfulLookup = async () => {
-  const { name, weather } = await getWeatherByCityName('Lagos');
-  await getIconUrl(weather[0].icon);
-  console.log('Reject', name, weather);
+  const {
+    name, weather, sys, main,
+  } = await getWeatherByCityName('Lagos');
+  await renderWeather(name, weather, sys, main);
 };
 
 if (window.navigator.geolocation) {
@@ -37,7 +40,7 @@ const chooseBgImage = (num) => {
   }
 };
 
-Form();
-
-
-chooseBgImage(3);
+window.addEventListener('load', () => {
+  chooseBgImage(3);
+  renderForm();
+});

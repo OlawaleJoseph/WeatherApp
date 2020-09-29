@@ -26,6 +26,15 @@
 }
 
 .searchBtn {
-  padding: 6px 10px;
+  padding: 6.5px 10px;
   font-size: 1.5em;
+}
+
+.widget {
+  position: absolute;
+  text-align: center;
+  width: 90%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
