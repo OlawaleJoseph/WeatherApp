@@ -3,3 +3,129 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+#content {
+  height: 100vh;
+  width: 100vw;
+  background-position: center;
+  object-fit: cover;
+  background-repeat: no-repeat;
+}
+
+.searchForm {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.citySearchInput {
+  width: 201px;
+  height: 45px;
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+.searchBtn {
+  padding: 6.5px 10px;
+  font-size: 1.5em;
+}
+
+.widget {
+  position: absolute;
+  text-align: center;
+  width: fit-content;
+  left: 50%;
+  top: 50%;
+  padding: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  transform: translate(-50%, -50%);
+}
+
+.location {
+  font-size: 2rem;
+}
+
+.temp {
+  font-size: 2.5rem;
+  display: flex;
+  margin-top: 30px;
+}
+
+.icon {
+  margin-right: 25px;
+  object-fit: contain;
+}
+
+.description {
+  margin-top: 25px;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+button {
+  background-color: rgb(64, 5, 98);
+  color: white;
+}
+
+input,
+input:focus,
+button:active,
+button:focus {
+  border: none;
+  outline: none;
+}
+
+.error {
+  color: rgb(230, 21, 21);
+  font-size: 20px;
+  background: white;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.toggle-button {
+  height: 100%;
+  width: 15px;
+  border-radius: 50%;
+}
+
+.toggle-container {
+  display: flex;
+  width: fit-content;
+  margin: 20px auto 0 auto;
+}
+
+.toggler {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid white;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.toggleBtn {
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 100%;
+  background-color: rgb(238, 81, 8);
+  border: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+
+.toggle:checked + .toggleBtn {
+  background-color: rgb(241, 11, 11);
+  left: auto;
+  right: 0;
+}
+
+span {
+  font-weight: 800;
+}
