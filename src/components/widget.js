@@ -1,7 +1,10 @@
+import Tgggler from './TempToggle';
+
 const celciusTofarenheit = (deg) => ((deg * (9 / 5)) + 32).toFixed(1);
 
 export default (userLocation, country, deg, description, iconUrl) => {
   let widget = document.querySelector('.widget');
+  const toggleTemp = Tgggler();
   const celsiusDeg = (deg - 273.15).toFixed(1);
 
   if (!widget) {
@@ -19,10 +22,16 @@ export default (userLocation, country, deg, description, iconUrl) => {
   const icon = document.createElement('img');
   icon.src = iconUrl;
   icon.classList.add('icon');
-  const temprature = document.createElement('h1');
-  temprature.innerHTML = `${celsiusDeg}&deg; C | ${celciusTofarenheit(celsiusDeg)}&deg; F`;
+  const tempratureCelcius = document.createElement('h1');
+  tempratureCelcius.id = 'celciusTemp';
+  const tempratureFarenheit = document.createElement('h1');
+  tempratureFarenheit.id = 'farenheitTemp';
+  tempratureCelcius.innerHTML = `${celsiusDeg}&deg;C `;
+  tempratureFarenheit.innerHTML = ` ${celciusTofarenheit(celsiusDeg)}&deg;F`;
+  tempratureFarenheit.classList.toggle('hide');
   tempContainer.appendChild(icon);
-  tempContainer.appendChild(temprature);
+  tempContainer.appendChild(tempratureCelcius);
+  tempContainer.appendChild(tempratureFarenheit);
   const weatherDescription = document.createElement('h4');
   weatherDescription.innerText = description;
   weatherDescription.classList.add('description');
@@ -30,6 +39,7 @@ export default (userLocation, country, deg, description, iconUrl) => {
   widget.appendChild(location);
   widget.appendChild(tempContainer);
   widget.appendChild(weatherDescription);
+  widget.appendChild(toggleTemp);
 
   document.querySelector('#content').appendChild(widget);
 };
