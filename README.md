@@ -7,7 +7,7 @@ This is part of the Weather-App Project in [The Odin Project's](https://www.theo
 
 ![screenshot](weather_screenshot.png)
 
-[Demo Link](https://rawcdn.githack.com/OlawaleJoseph/WeatherApp/ab13beeef56acfcf17e521f20b52804fce03f6fa/dist/index.html)
+[Demo Link](https://rawcdn.githack.com/OlawaleJoseph/WeatherApp/be87126fa26a8cba6308cd9c96e490b8624189ea/dist/index.html)
 
 
 ## Implementations
