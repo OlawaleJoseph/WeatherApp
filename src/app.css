@@ -54,7 +54,7 @@
 
 .icon {
   margin-right: 25px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .description {
