@@ -63,13 +63,15 @@
   text-transform: capitalize;
 }
 
-input,
-input:focus {
-  border: none;
-  outline: none;
-}
-
 button {
   background-color: rgb(64, 5, 98);
   color: white;
+}
+
+input,
+input:focus,
+button:active,
+button:focus {
+  border: none;
+  outline: none;
 }
