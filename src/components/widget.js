@@ -1,4 +1,4 @@
-const celciusTofarenheit = (deg) => ((deg * (9 / 5)) + 32);
+const celciusTofarenheit = (deg) => ((deg * (9 / 5)) + 32).toFixed(1);
 
 export default (userLocation, country, deg, description, iconUrl) => {
   let widget = document.querySelector('.widget');
