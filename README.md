@@ -5,7 +5,7 @@
 
 ![screenshot](weather_screenshot.png)
 
-[Demo Link](https://rawcdn.githack.com/OlawaleJoseph/WeatherApp/a6bd24ebba37a66a4cebab7c875cf278c75b783d/dist/index.html)
+[Demo Link](https://rawcdn.githack.com/OlawaleJoseph/WeatherApp/ab13beeef56acfcf17e521f20b52804fce03f6fa/dist/index.html)
 
 ## Built With
 
