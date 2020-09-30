@@ -41,3 +41,10 @@ export default async (name, weather, sys, main) => {
   const { id } = weather[0];
   setBackGroundImage(id);
 };
+
+export const renderError = (msg) => {
+  document.querySelector('.error').textContent = msg;
+  setTimeout(() => {
+    document.querySelector('.error').textContent = '';
+  }, 3000);
+};

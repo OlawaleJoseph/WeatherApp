@@ -1,5 +1,5 @@
 import { getWeatherByCityName } from '../utils/fetch';
-import renderWidget from '../utils/common';
+import renderWidget, { renderError } from '../utils/common';
 
 export default () => {
   const form = document.createElement('form');
@@ -12,21 +12,28 @@ export default () => {
   btn.type = 'submit';
   btn.innerText = 'Search';
   btn.classList.add('searchBtn');
+  const error = document.createElement('p');
+  error.classList.add('error');
 
   form.appendChild(input);
   form.appendChild(btn);
+  form.appendChild(error);
 
   form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const { value } = input;
-    if (value) {
-      const {
-        name, weather, sys, main,
-      } = await getWeatherByCityName(value);
+    try {
+      e.preventDefault();
+      const { value } = input;
+      if (value) {
+        const {
+          name, weather, sys, main,
+        } = await getWeatherByCityName(value);
 
-      renderWidget(name, weather, sys, main);
+        renderWidget(name, weather, sys, main);
+      }
+      form.reset();
+    } catch ({ message }) {
+      renderError(message);
     }
-    form.reset();
   });
 
   document.querySelector('#content').appendChild(form);
