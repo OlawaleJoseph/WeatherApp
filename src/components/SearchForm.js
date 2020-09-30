@@ -18,11 +18,15 @@ export default () => {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const {
-      name, weather, sys, main,
-    } = await getWeatherByCityName(input.value);
+    const { value } = input;
+    if (value) {
+      const {
+        name, weather, sys, main,
+      } = await getWeatherByCityName(value);
+
+      renderWidget(name, weather, sys, main);
+    }
     form.reset();
-    renderWidget(name, weather, sys, main);
   });
 
   document.querySelector('#content').appendChild(form);
