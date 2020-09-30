@@ -33,6 +33,10 @@ export const getWeatherByCityName = async (cityName) => {
 };
 
 export const getIconUrl = async (iconCode) => {
-  const { url } = await fetch(`http://openweathermap.org/img/w/${iconCode}.png`);
-  return url;
+  try {
+    const { url } = await fetch(`http://openweathermap.org/img/w/${iconCode}.png`);
+    return url;
+  } catch (error) {
+    return error;
+  }
 };

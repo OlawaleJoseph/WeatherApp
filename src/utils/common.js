@@ -25,6 +25,10 @@ const setBackGroundImage = (weatherId) => {
       content.style.backgroundImage = "url('./assets/images/clear_sky.jpg')";
       break;
   }
+
+  if (weatherId === 800) {
+    content.style.backgroundImage = "url('./assets/images/clear_sky.jpg')";
+  }
 };
 
 export default async (name, weather, sys, main) => {

@@ -13,16 +13,19 @@ export default (userLocation, country, deg, description, iconUrl) => {
 
   const location = document.createElement('h2');
   location.innerText = `${userLocation}, ${country}`;
+  location.classList.add('location');
   const tempContainer = document.createElement('div');
-  tempContainer.classList.add('tempContainer');
+  tempContainer.classList.add('temp');
   const icon = document.createElement('img');
   icon.src = iconUrl;
+  icon.classList.add('icon');
   const temprature = document.createElement('h1');
   temprature.innerHTML = `${celsiusDeg}&deg; C | ${celciusTofarenheit(celsiusDeg)}&deg; F`;
   tempContainer.appendChild(icon);
   tempContainer.appendChild(temprature);
   const weatherDescription = document.createElement('h4');
   weatherDescription.innerText = description;
+  weatherDescription.classList.add('description');
 
   widget.appendChild(location);
   widget.appendChild(tempContainer);
